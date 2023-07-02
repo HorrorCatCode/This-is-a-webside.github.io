@@ -44,6 +44,31 @@
             font-size: 20px;
             text-align: center;
         }
+
+        .additional-section {
+    position: fixed;
+    top:10;
+    left: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+.additional-section.active {
+    opacity: 1;
+}
+
+        .additional-section.active {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +87,9 @@
             <p class="text" style="font-size: 20px; font-family: 'Roboto', sans-serif;">JavaScript macht Webseiten interaktiv, indem es auf Benutzeraktionen wie Klicks und Tastatureingaben reagiert. Es ermöglicht die Manipulation von Webseitenelementen und die Verarbeitung von Daten. Zudem können asynchrone Anfragen an den Server gesendet werden, um Daten zu laden oder zu speichern. Mit JavaScript können Sie Ihre Webseite lebendiger gestalten und eine interaktive Benutzererfahrung bieten.</p>
         </div>
     </div>
+    <div class="fade-text additional-section">
+        <h1 style="font-family: 'Roboto', sans-serif; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 1%);">By ®Horrorcat </h1>
+    </div>    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const fadeTexts = document.querySelectorAll('.fade-text');
@@ -89,8 +117,6 @@
                     if (event.deltaY > 0) {
                         if (currentTextIndex < fadeTexts.length - 1) {
                             fadeText();
-                        } else {
-                            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley';
                         }
                     } else {
                         if (currentTextIndex > 0) {
@@ -112,12 +138,26 @@
                 } else if (event.key === 'ArrowDown') {
                     if (currentTextIndex < fadeTexts.length - 1) {
                         fadeText();
-                    } else {
-                        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley';
                     }
                 }
             });
 
+            window.addEventListener('scroll', function() {
+                const additionalSection = document.querySelector('.additional-section');
+                const scrollPosition = window.scrollY || window.pageYOffset;
+
+                if (scrollPosition > 0) {
+                    document.body.style.backgroundColor = 'black';
+                    additionalSection.classList.add('active');
+                } else {
+                    document.body.style.backgroundColor = 'white';
+                    additionalSection.classList.remove('active');
+                }
+            });
+
+            window.addEventListener('beforeunload', function() {
+                document.body.style.opacity = '0';
+            });
         });
     </script>
 </body>
