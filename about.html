@@ -76,15 +76,14 @@
         <h1 class="fade-text active" style="font-size: 79px;">Website Anatomy</h1>
         <div class="fade-text" style="font-size: 24px;">
             <h1 style="font-family: 'Roboto', sans-serif;">HTML (Hypertext Markup Language):</h1>
-            <p class="text" style="font-size: 20px; font-family: 'Roboto', sans-serif;">HTML bildet die Struktur der Webseite. Es verwendet Tags, um den Inhalt der Seite zu kennzeichnen und zu organisieren. In unserem Beispiel haben wir die grundlegende HTML-Struktur verwendet, einschließlich des &lt;!DOCTYPE html&gt;-Deklarationstags, des html-Tags als Wurzelelement und des body-Tags für den sichtbaren Inhalt der Seite.</p>
+        
         </div>
         <div class="fade-text" style="font-size: 24px;">
             <h1 style="font-family: 'Roboto', sans-serif;">CSS (Cascading Style Sheets):</h1>
-            <p class="text" style="font-size: 20px; font-family: 'Roboto', sans-serif;">CSS ermöglicht die Gestaltung und das Layout der Webseite. Es definiert Farben, Schriftarten, Abstände und andere visuelle Eigenschaften. In unserem Beispiel haben wir den Hintergrund auf weiß (background-color: #fff) gesetzt und die Textfarbe auf schwarz (color: #000) für eine kontrastreiche Darstellung. Die Übergangseffekte (transition) wurden verwendet, um sanfte Animationen beim Farbwechsel zu erzeugen.</p>
         </div>
         <div class="fade-text" style="font-size: 24px;">
             <h1 style="font-family: 'Roboto', sans-serif;">JavaScript:</h1>
-            <p class="text" style="font-size: 20px; font-family: 'Roboto', sans-serif;">JavaScript macht Webseiten interaktiv, indem es auf Benutzeraktionen wie Klicks und Tastatureingaben reagiert. Es ermöglicht die Manipulation von Webseitenelementen und die Verarbeitung von Daten. Zudem können asynchrone Anfragen an den Server gesendet werden, um Daten zu laden oder zu speichern. Mit JavaScript können Sie Ihre Webseite lebendiger gestalten und eine interaktive Benutzererfahrung bieten.</p>
+
         </div>
     </div>
     <div class="fade-text additional-section">
@@ -117,6 +116,9 @@
                     if (event.deltaY > 0) {
                         if (currentTextIndex < fadeTexts.length - 1) {
                             fadeText();
+                        } else {
+                            // Redirect to the specified link
+                            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
                         }
                     } else {
                         if (currentTextIndex > 0) {
@@ -138,6 +140,9 @@
                 } else if (event.key === 'ArrowDown') {
                     if (currentTextIndex < fadeTexts.length - 1) {
                         fadeText();
+                    } else {
+                        // Redirect to the specified link
+                        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
                     }
                 }
             });
